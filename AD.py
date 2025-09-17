@@ -163,28 +163,18 @@ while True:
 
     # 3. Listagem de dados
     elif opcao == "3":
-        while True:
-            num = 1
-            print("\nCulturas disponíveis:")
-            for c in culturas:
-                print(f"{num}. {c}")
-                num += 1
-            escolha = (input("Escolha a cultura: "))
-            if escolha == "1" or escolha == "2":
-                print("\n=== Áreas de Plantio ===")
-                for i in range(len(culturas)):
-                    print(f"{culturas[i]}: {areas[i]} m²")
+        print("\n=== Áreas de Plantio ===")
+        for i in range(len(culturas)):
+            print(f"{culturas[i]}: {areas[i]} m²")
 
-                print("\n=== Manejo de Insumos ===")
-                if len(insumos) == 0:
-                    print("Nenhum manejo cadastrado.")
-                else:
-                    num = 1
-                    for i in insumos:
-                        print(f"{num}. {i['produto']} - {i['cultura']} - Total: {i['total']} mL")
-                        num += 1
-            else:
-                print("❌ Entrada inválida! Digite apenas números inteiros.")
+        print("\n=== Manejo de Insumos ===")
+        if len(insumos) == 0:
+            print("Nenhum manejo cadastrado.")
+        else:
+            num = 1
+            for i in insumos:
+                print(f"{num}. {i['produto']} - {i['cultura']} - Total: {i['total']} mL")
+                num += 1
 
 
     # 4. Atualização de áreas
